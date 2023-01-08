@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+    font: 16px/1.4 'Montserrat', sans-serif;
+    background-image: linear-gradient(to right,#1abc9c,#16a085,#2ecc71,#27ae60,#3498db,#2980b9,#9b59b6,#8e44ad,#f1c40f,#f39c12,#e67e22,#d35400);
+    background-size: 400%;
+    min-height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bganimation 20s infinite;
+}
+@keyframes bganimation{
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
