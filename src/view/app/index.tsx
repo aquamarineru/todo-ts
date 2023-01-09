@@ -15,6 +15,8 @@ export const App: React.FC = () => {
         state.updateTask,
         state.removeTask
     ]);
+
+    console.log(tasks)
     return (
         <article className={styles.article}>
             <h1 className={styles.articleTitle}>Todo App</h1>
@@ -25,7 +27,11 @@ export const App: React.FC = () => {
                     }}
                 />
             </section>
-            <section className={styles.articleSection}></section>
+            <section className={styles.articleSection}>
+                {!tasks.length && (
+                    <p className={styles.articleDescr}>There is no one task</p>
+                )}
+            </section>
         </article>
     );
     
