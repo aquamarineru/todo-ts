@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTodoStore } from '../../data/stores/useTodoStore';
 import { InputPlus } from '../components/InputPlus';
+import { InputTask } from '../components/InputTask';
 import styles from './index.module.scss';
 
 export const App: React.FC = () => {
@@ -15,8 +16,6 @@ export const App: React.FC = () => {
         state.updateTask,
         state.removeTask
     ]);
-
-    console.log(tasks)
     return (
         <article className={styles.article}>
             <h1 className={styles.articleTitle}>Todo App</h1>
@@ -31,6 +30,16 @@ export const App: React.FC = () => {
                 {!tasks.length && (
                     <p className={styles.articleDescr}>There is no one task</p>
                 )}
+                    {tasks.map((task) => (
+                        <InputTask 
+                            key={task.id} //important
+                            id={task.id}
+                            title={task.title}
+                            onDone={removeTask}
+                            onEdited={updateTask}    
+                            onRemoved={removeTask} 
+                        />
+                    ))}
             </section>
         </article>
     );
