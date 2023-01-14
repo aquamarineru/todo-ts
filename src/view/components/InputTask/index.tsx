@@ -17,9 +17,37 @@ export const InputTask: React.FC<InputTaskProps> = ({
     onEdited,
     onRemoved
 }) => {
+    const [checked, setChecked] = useState(false);
     return (
         <div className={styles.InputTask}>
-        1234
+            <label className={styles.InputTaskLabel}>
+                <input 
+                    type="checkbox"
+                    checked={checked}
+                    className={styles.InputTaskCheckbox}
+                    onChange={(e)=>{
+                        setChecked(e.target.checked);
+                        onDone(id);
+                    }}
+                />
+                <h3 className={styles.inputTaskTitle}>{title}</h3>
+            </label>
+            <button 
+                aria-label="Edit task"
+                className={styles.InputTaskEdit}
+                onClick={()=>{
+                    onEdited(id, title);
+                }}
+            />
+            <button 
+                aria-label="Remove task"
+                className={styles.InputTaskRemove}
+                onClick={()=>{
+                    if(confirm("Are you sure?")){
+                    onRemoved(id);
+                }
+                }}
+            />
         </div>
     )
 };
