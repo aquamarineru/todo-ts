@@ -38,11 +38,11 @@ export const InputTask: React.FC<InputTaskProps> = ({
                     className={styles.InputTaskCheckbox}
                     onChange={(e)=>{
                         setChecked(e.target.checked);
-                        if(e.target.checked){
+                       /*  if(e.target.checked){
                             setTimeout(()=>{
                                 onDone(id);
                             }, 1000);
-                        }
+                        } */
                     }}
                 />
                 {isEditMode ? (
