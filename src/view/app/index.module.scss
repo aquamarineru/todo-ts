@@ -13,3 +13,13 @@
         text-align: center;
     }
 }
+@media screen and (max-width: 600px) {
+    .article {
+        min-width: 200px;
+        padding: 30px 15px;
+        margin: 0 10px;
+    }
+}
+    
+
+    
